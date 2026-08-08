@@ -25,17 +25,17 @@ paramètres) sur un cas d'usage librement réutilisable.
 
 ## Ce que fait l'outil
 
-1. Lit `data/functions.xlsx` : la liste des fonctions (blocs), leurs entrées/sorties, et leur
+1. Lit `functions.xlsx` : la liste des fonctions (blocs), leurs entrées/sorties, et leur
    enchaînement.
-2. Lit `data/parameters.xml` : les paramètres de chaque fonction (un "data dictionary" simplifié).
-3. Génère `output/build_avas_model.m` : un script MATLAB qui construit automatiquement le
+2. Lit `parameters.xml` : les paramètres de chaque fonction (un "data dictionary" simplifié).
+3. Génère `build_avas_model.m` : un script MATLAB qui construit automatiquement le
    modèle Simulink — sous-systèmes, ports, connexions, et variables de paramètres.
-4. Génère `output/architecture_preview.svg` : un aperçu visuel de l'architecture, consultable
+4. Génère `architecture_preview.svg` : un aperçu visuel de l'architecture, consultable
    sans avoir MATLAB installé.
 
 ## Architecture générée
 
-![Architecture AVAS](output/architecture_preview.svg)
+![Architecture AVAS](architecture_preview.svg)
 
 `SpeedSensorInterface → SoundGenerator → VolumeControl → SpeakerOutputDriver`
 
@@ -64,18 +64,18 @@ signal audio (oscillateur), hors du périmètre de cette démonstration.
 pip install openpyxl graphviz
 
 # 2. Générer le script MATLAB et l'aperçu
-python3 scripts/generate_model.py
+python3 generate_model.py
 
 # 3. Dans MATLAB (avec Simulink installé)
-run('output/build_avas_model.m')
+run('build_avas_model.m')
 ```
 
-Le fichier `AVAS_ElectricVehicle.slx` est alors créé automatiquement dans `output/`.
+Le fichier `AVAS_ElectricVehicle.slx` est alors créé automatiquement dans le dossier courant.
 
 ## Modifier l'architecture
 
-Pour ajouter ou modifier une fonction, il suffit d'éditer `data/functions.xlsx` (une ligne =
-une fonction) et `data/parameters.xml` (les paramètres associés), puis de relancer
+Pour ajouter ou modifier une fonction, il suffit d'éditer `functions.xlsx` (une ligne =
+une fonction) et `parameters.xml` (les paramètres associés), puis de relancer
 `generate_model.py`. Aucune modification du code Python n'est nécessaire — c'est tout l'intérêt
 de l'approche MBD automatisée.
 
@@ -87,7 +87,7 @@ de l'approche MBD automatisée.
 
 ## Auteur
 
-[Ton nom] — Ingénieur systèmes embarqués, spécialisée en Model-Based Design.
+Maroua Taouil — Ingénieur systèmes embarqués, spécialisée en Model-Based Design.
 Basé sur une expérience de deux projets MBD en entreprise (Expleo Group, 2023–2024).
 
 ## Sources réglementaires
