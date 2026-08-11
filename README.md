@@ -87,7 +87,7 @@ de l'approche MBD automatisée.
 
 ## Auteur
 
-Maroua Taouil — Ingénieur systèmes embarqués, spécialisée en Model-Based Design.
+Maroua Taouil — Ingénieure systèmes embarqués, spécialisée en Model-Based Design.
 Basé sur une expérience de deux projets MBD en entreprise (Expleo Group, 2023–2024).
 
 ## Sources réglementaires
